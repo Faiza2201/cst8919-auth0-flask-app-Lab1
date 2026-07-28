@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Auth0 Flask Demo</title></head>
+<body>
+  {% if session %}
+    <h1>Welcome, {{ session.userinfo.name }}!</h1>
+    <p><a href="/protected">Go to Protected Page</a></p>
+    <p><a href="/logout">Logout</a></p>
+    <pre>{{ pretty }}</pre>
+  {% else %}
+    <h1>Logged out</h1>
+    <p><a href="/login">Login</a></p>
+  {% endif %}
+</body>
+</html>
