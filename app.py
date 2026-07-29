@@ -1,6 +1,7 @@
 import json
 import logging
 from os import environ as env
+from werkzeug.middleware.proxy_fix import ProxyFix
 from urllib.parse import quote_plus, urlencode
 from datetime import datetime
 
@@ -13,6 +14,7 @@ if ENV_FILE:
     load_dotenv(ENV_FILE)
 
 app = Flask(__name__)
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 app.secret_key = env.get("APP_SECRET_KEY")
 
 # --- Logging setup ---
