@@ -1,0 +1,21 @@
+### Home page (unauthenticated) - should show "Logged out"
+GET https://auth0-flask-boud0219-cba2dpeaarebh2h7.canadacentral-01.azurewebsites.net/
+
+### Attempt to access protected route WITHOUT login
+### Expected: redirect (302) to Auth0 login, and an UNAUTHORIZED_ACCESS warning logged
+GET https://auth0-flask-boud0219-cba2dpeaarebh2h7.canadacentral-01.azurewebsites.net/protected
+
+### Repeat unauthorized attempts to simulate suspicious/excessive access pattern
+GET https://auth0-flask-boud0219-cba2dpeaarebh2h7.canadacentral-01.azurewebsites.net/protected
+
+###
+GET https://auth0-flask-boud0219-cba2dpeaarebh2h7.canadacentral-01.azurewebsites.net/protected
+
+###
+GET https://auth0-flask-boud0219-cba2dpeaarebh2h7.canadacentral-01.azurewebsites.net/protected
+
+###
+GET https://auth0-flask-boud0219-cba2dpeaarebh2h7.canadacentral-01.azurewebsites.net/protected
+
+### Logout endpoint (redirects to Auth0 logout, then back home)
+GET https://auth0-flask-boud0219-cba2dpeaarebh2h7.canadacentral-01.azurewebsites.net/logout
