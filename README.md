@@ -17,7 +17,6 @@ A Flask web application secured with Auth0 (SSO), deployed to Azure App Service,
 ## Live App
 
 - **URL**: https://auth0-flask-boud0219-cba2dpeaarebh2h7.canadacentral-01.azurewebsites.net
-- **YouTube Demo**: [ADD YOUTUBE LINK HERE]
 
 ---
 
